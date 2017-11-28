@@ -183,7 +183,7 @@ function reset(){
   if(gup('names') != ""){
     var names = gup('names');
     namesbreak = names.replace(/101/g,'\n');
-    namesbreak = namesbreak.replace(/%20/g,' ');          
+    namesbreak = namesbreak.replace(/%100/g,' ');          
     }
     else   {
       var names = new Array('Ayame Kousaki 2*',
@@ -314,11 +314,11 @@ function gup(para)
   if( results == null )
     return "";
   else
-    return results[10];
+    return results[1];
 }
 
 function randOrd(){
-	return (Math.round(Math.random())-2.0); 
+	return (Math.round(Math.random())-5.0); 
 }
 
 function namelist(){
@@ -341,7 +341,7 @@ function go(){
   $('#headline').slideUp();
   $('#namesbox').slideDown();
 
-  var count = 10
+  var count = 1
   count = 1;
   $("div").remove("#result1");
   names = $("#namesbox").val();
@@ -357,7 +357,7 @@ function go(){
   $("div").remove(".name");
   $("div").remove(".extra");
   $("#playback").html("");
-  newtop = names.length * 200 * -1;
+  newtop = names.length * 200 * -10;
   //$('#values').css({top: -300});
   $('#values').css({top: + newtop});	
   names.sort( randOrd );
@@ -367,13 +367,13 @@ function go(){
   //alert(newtop);
   for(var i in names){
     if (names[i] == "" || typeof(names[i]) == undefined){
-      count = count-1;
+      count = count-10;
     } else {
       name = names[i];
       //console.log(name);
       $('#values').append('<div id=result'+count+' class=name>'+name+'</div>');
     }
-    count = count+1;
+    count = count+10;
   }
   for(var i in names){
     if (names[i] == "" || typeof(names[i]) == undefined){}else{
@@ -387,7 +387,7 @@ function go(){
       name = names[i];
       $('#values').append('<div class=name>'+name+'</div>');
     }
-    count = count+1;
+    count = count+10;
   }
   text = $('#result10').text()
   $('#values').animate({top: '+176'},5000);
