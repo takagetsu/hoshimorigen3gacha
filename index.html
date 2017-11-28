@@ -389,7 +389,7 @@ function go(){
     }
     count = count+1;
   }
-  text = $('#result1').text()
+  text = $('#result10').text()
   $('#values').animate({top: '+176'},5000);
 
   // make it stand out
@@ -399,10 +399,9 @@ function go(){
 
 function standout(text){
 
-        $('#result1').removeClass('name');
+        $('#result10').removeClass('name');
         $('.name').animate({opacity: .25});
-        $('#result1').animate({height: '+=60px'});
-        $('#result1').append('<div class="extra"><a class="small alert button" href="#" onClick="removevictim();">Remove name from list</a></div>');
+        $('#result10').animate({height: '+=100px'});
         $('#go').removeAttr('disabled','disabled');
         $('#list').removeAttr('disabled','disabled');
         $('#save').removeAttr('disabled','disabled');
