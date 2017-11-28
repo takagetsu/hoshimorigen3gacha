@@ -341,8 +341,8 @@ function go(){
   $('#headline').slideUp();
   $('#namesbox').slideDown();
 
-  var count = 1;
-  count = 10;
+  var count = 10
+  count = 1;
   $("div").remove("#result1");
   names = $("#namesbox").val();
   if(document.all) { // IE
@@ -406,7 +406,7 @@ function standout(text){
         $('#go').removeAttr('disabled','disabled');
         $('#list').removeAttr('disabled','disabled');
         $('#save').removeAttr('disabled','disabled');
-        $('#headline').text('Found the Winner!');
+        $('#headline').text('Scout Results!');
         $('#headline').slideDown();
 }
 
